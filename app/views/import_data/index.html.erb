@@ -1,0 +1,7 @@
+<h1>ImportData#index</h1>
+<p>Find me in app/views/import_data/index.html.erb</p>
+
+<%= form_tag({action: :upload}, multipart: true) do %>
+  <%= file_field_tag 'importedFile' %>
+  <%= submit_tag 'Save' %>
+<% end %>

@@ -1,0 +1,13 @@
+<div class="card-deck">
+  <% cpt=0 %>
+  <% @things.each do |thing| %>
+    <div class="card border-primary" style="width: 18rem;">
+      <img class="card-img-top" src="/images/img<%= cpt %>.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%= thing.name.demodulize %></h5>
+        <%= link_to 'Voir', {controller: thing.name.tableize.downcase}, {class: "btn btn-primary"} %>
+        <% cpt+=1 %>
+      </div>
+    </div>
+  <% end %>
+</div>

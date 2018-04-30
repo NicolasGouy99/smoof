@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  raison_sociale: MyString
+  adresse: MyString
+  code_postal: MyString
+  commune: MyString
+  contact: MyString
+  code_ape: MyString
+  categorie_principale: MyString
+  categorie_secondaire: MyString
+  telephone: MyString
+  mail: MyString
+  profils_recherches: MyString
+  commentaires: MyString
+  date_pa: MyString
+  nom_pa: MyString
+  semaine_de_revoir: MyString
+  cote: 1
+
+two:
+  raison_sociale: MyString
+  adresse: MyString
+  code_postal: MyString
+  commune: MyString
+  contact: MyString
+  code_ape: MyString
+  categorie_principale: MyString
+  categorie_secondaire: MyString
+  telephone: MyString
+  mail: MyString
+  profils_recherches: MyString
+  commentaires: MyString
+  date_pa: MyString
+  nom_pa: MyString
+  semaine_de_revoir: MyString
+  cote: 1

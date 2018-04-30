@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nom: MyString
+  puht: 1
+  autre_colonne_sdfqsdf: MyString
+  encore: MyString
+  et_une_autre: MyString
+  test: MyString
+
+two:
+  nom: MyString
+  puht: 1
+  autre_colonne_sdfqsdf: MyString
+  encore: MyString
+  et_une_autre: MyString
+  test: MyString

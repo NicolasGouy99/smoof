@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nom: MyString
+  un_entier: 1
+  une_date: 2018-04-30
+  un_decimal: 1.5
+  et_une_autre: MyString
+  test: MyString
+
+two:
+  nom: MyString
+  un_entier: 1
+  une_date: 2018-04-30
+  un_decimal: 1.5
+  et_une_autre: MyString
+  test: MyString
