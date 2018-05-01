@@ -1,0 +1,34 @@
+<p id="notice"><%%= notice %></p>
+
+<h1><%= plural_table_name.titleize %></h1>
+
+<script type="text/javascript">
+$( document ).ready(function() {
+
+$('#live_search').keyup(function() {
+  $.ajax({
+    //Your ajax code here to submit from via AJAX. refer jquery site . I gave sample eg.
+    url : "/live_search/search",
+    data : $("form").serialize(),
+    dataType: 'script'
+  });
+}
+);
+});
+</script>
+
+
+<%%= form_tag(live_search_search_path, method: "get", remote: true, authenticity_token: true, role: "form",class: "form") do %>
+      <%%= hidden_field_tag "classname", @classname %>
+      <div class="form-group">
+        <%%= text_field_tag(:keyword, "", class: "form-control", id: "live_search", placeholder: "Recherche") %>
+      </div>
+<%% end %>
+
+<table id="results">
+  <%%= render 'results' %>
+</table>
+
+<br>
+
+<%%= link_to 'New <%= singular_table_name.titleize %>', new_<%= singular_table_name %>_path %>

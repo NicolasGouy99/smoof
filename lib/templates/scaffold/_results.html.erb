@@ -1,0 +1,21 @@
+<thead>
+  <tr>
+<% attributes.reject(&:password_digest?).slice(0,3).each do |attribute| -%>
+    <th><%= attribute.human_name %></th>
+<% end -%>
+    <th colspan="3"></th>
+  </tr>
+</thead>
+
+<tbody>
+  <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
+    <tr>
+<% attributes.reject(&:password_digest?).slice(0,3).each do |attribute| -%>
+      <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+<% end -%>
+      <td><%%= link_to 'Voir', <%= singular_table_name %> %></td>
+      <td><%%= link_to 'Editer', edit_<%= singular_table_name %>_path(<%= singular_table_name %>) %></td>
+      <td><%%= link_to 'Supprimer', <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <%% end %>
+</tbody>
