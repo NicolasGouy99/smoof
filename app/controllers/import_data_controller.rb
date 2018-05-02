@@ -31,7 +31,6 @@ class ImportDataController < ApplicationController
       command_destroy = "rails destroy scaffold " + name
       command_scaffold = "rails generate scaffold " + name
 
-      Thing.find_or_create_by(name: name)
 
       columns = []
       cell = worksheet[0].cells[col]
@@ -83,6 +82,28 @@ class ImportDataController < ApplicationController
         row = row + 1
         cell = worksheet[row].cells[0]
       end
+
+      # check if we need to add filters or not
+      # we add filters when number of occurences < 20 or when the column is a number
+      model = Object.const_get(name)
+      filters = ""
+      model.columns.each do |c|
+
+        if c.type == :integer
+          filters += c.name + ','
+        end
+
+        if c.type == :string
+          values = model.distinct.pluck(c.name.to_sym)
+          if (values.count < 20)
+            filters += c.name + ','
+          end
+        end
+      end
+      Thing.find_or_create_by(name: name) do |thing|
+        thing.filters = filters
+      end
+
     end
 
   end
